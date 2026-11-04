@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "testagent"
+version = "0.2.0"
+description = "Starter kit for phase 2: agents that find bugs in Python projects by writing tests"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "mini-swe-agent>=2.4,<3",
+    "pytest>=8",
+    "hypothesis>=6",
+    "pyyaml>=6",
+    "jinja2>=3",
+    "python-dotenv>=1",
+]
+
+[tool.setuptools]
+packages = ["testagent"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
