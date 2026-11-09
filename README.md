@@ -2,8 +2,8 @@
 
 In phase 1 your agent tested single functions. In phase 2 it tests whole Python projects. Each project
 comes with its code, its documentation and an existing test suite that passes. The code contains bugs
-that the existing tests do not catch. We do not tell you where they are or how many there are. Your
-agent has to find them by writing new tests.
+that the existing tests do not catch. Your agent has to find them by writing new tests. For the
+held-out projects, which decide your mark, we do not tell you where the bugs are or how many there are.
 
 The model is the same as in phase 1 (Qwen3.5 9B through OpenRouter), with a fixed token budget per
 project. This time the agent itself is yours: you can change the loop, not only the prompts and tools.
@@ -96,9 +96,11 @@ constants, wrong arithmetic or boolean operators), and kept a bug only if the pr
 caught it. Then we removed the tests that caught the bugs, so the existing suite passes with every bug
 in place. The held-out projects are built the same way, but the bugs there may be of other kinds too.
 
-The correct code and the list of bugs of the development projects are in `data/dev/` so the evaluator
-can run. Your agent and your tools must not read `data/`. You can easily find the development bugs
-yourself, but that does not help you: they are not marked.
+The development projects are for building and measuring your agent, so nothing about them is secret.
+The evaluator needs their correct code and their list of bugs, which are in `data/dev/`, and it reports
+how many bugs you found out of how many there are. Your agent and your tools must not read `data/`.
+You can easily find the development bugs yourself, but that does not help you: they are not marked. The
+held-out projects can have a different number of bugs, and your agent will not be told how many.
 
 ## Setup
 
